@@ -15,8 +15,6 @@ import net.minecraftforge.registries.RegistryObject;
  * @author Autovw
  */
 public class AdditionalGunsTab {
-    AdditionalGunsTab() {
-    }
     public static final DeferredRegister<CreativeModeTab> ADDITIONAL_TAB = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, AdditionalGuns.ID);
     public static final RegistryObject<CreativeModeTab> ADDITIONAL_GUNS_TAB = ADDITIONAL_TAB.register("additional_guns_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup." + AdditionalGuns.ID))
