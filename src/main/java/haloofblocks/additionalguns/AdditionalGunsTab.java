@@ -4,10 +4,8 @@ import haloofblocks.additionalguns.common.item.AdditionalGunItem;
 import haloofblocks.additionalguns.core.registry.ItemRegistry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -35,26 +33,4 @@ public class AdditionalGunsTab {
                 });
             })
             .build());
-    /*@SubscribeEvent
-    public void onRegisterCreativeModeTab(final CreativeModeTabEvent.Register event) {
-        event.registerCreativeModeTab(new ResourceLocation(AdditionalGuns.ID), builder -> {
-            builder.title(Component.translatable("itemGroup." + AdditionalGuns.ID));
-            builder.icon(() -> {
-                ItemStack stack = ItemRegistry.ACE_OF_SPADES.get().getDefaultInstance();
-                stack.getOrCreateTag().putBoolean("IgnoreAmmo", true);
-                return stack;
-            });
-            builder.displayItems((flags, entries) -> {
-                ItemRegistry.ITEMS.getEntries().stream().map(RegistryObject::get).forEach((entry) -> {
-                    if (entry instanceof AdditionalGunItem gunItem) {
-                        ItemStack stack = gunItem.getDefaultInstance();
-                        stack.getOrCreateTag().putInt("AmmoCount", gunItem.getGun().getGeneral().getMaxAmmo());
-                        entries.accept(stack);
-                    } else {
-                        entries.accept(entry);
-                    }
-                });
-            });
-        });
-    }*/
 }
